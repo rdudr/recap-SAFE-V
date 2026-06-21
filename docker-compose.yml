@@ -1,0 +1,6 @@
+services:
+  backend:
+    build: ./backend
+    ports: ["8000:8000"]
+    volumes: ["./backend/data:/data"]  # sqlite lives here; delete file = demo reset
+# soc-console service: add once Rishabh picks React vs Streamlit (specs.md §4.4)

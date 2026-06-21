@@ -1,0 +1,10 @@
+name: dependency-scan
+on: [push, pull_request]
+jobs:
+  osv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: google/osv-scanner-action/osv-scanner-action@v2
+        with:
+          scan-args: --lockfile=requirements.txt:backend/requirements.txt
