@@ -234,7 +234,6 @@ class _TravelModeScreenState extends State<TravelModeScreen> {
               decoration: BoxDecoration(
                 color: Colors.grey[100],
                 borderRadius: BorderRadius.circular(8),
-                fontFamily: 'monospace',
               ),
               child: Text(
                 totpSecret.backupCodes,

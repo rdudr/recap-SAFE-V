@@ -10,9 +10,9 @@ class ApiClient {
 
   static const _storage = FlutterSecureStorage();
   final Dio dio = Dio(BaseOptions(
-    baseUrl: 'http://10.0.2.2:8000',
-    connectTimeout: const Duration(seconds: 5),
-    receiveTimeout: const Duration(seconds: 5),
+    baseUrl: 'http://localhost:8000',
+    connectTimeout: const Duration(seconds: 10),
+    receiveTimeout: const Duration(seconds: 10),
   ));
 
   Future<void> init() async {

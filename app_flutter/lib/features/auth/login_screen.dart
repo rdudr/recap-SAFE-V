@@ -49,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
       } else if (decision == 'STEP_UP') {
         final channel = result['stepup_channel'] ?? 'SMS_OTP';
         setState(() => _status = 'Step-up required via $channel');
-        if (channel == 'TOTP') Navigator.pushNamed(context, '/totp');
+        Navigator.pushNamed(context, '/totp');
       } else {
         setState(() => _status = 'Blocked. Contact the bank. '
             'Top signal: ${(result['top_signals'] as List).isNotEmpty ? result['top_signals'][0]['signal'] : '-'}');

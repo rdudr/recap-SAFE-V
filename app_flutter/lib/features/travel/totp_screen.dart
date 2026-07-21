@@ -117,9 +117,13 @@ class _TotpScreenState extends State<TotpScreen> {
                           Stack(
                             alignment: Alignment.center,
                             children: [
-                              CircularProgressIndicator(
-                                value: _secondsLeft / 30,
-                                minRadius: 30,
+                              SizedBox(
+                                width: 60,
+                                height: 60,
+                                child: CircularProgressIndicator(
+                                  value: _secondsLeft / 30,
+                                  strokeWidth: 4,
+                                ),
                               ),
                               Text(
                                 '$_secondsLeft s',
@@ -168,9 +172,22 @@ class _TotpScreenState extends State<TotpScreen> {
                       ),
                     ),
                     const SizedBox(height: 24),
-                    FilledButton(
-                      onPressed: () => Navigator.pop(context),
-                      child: const Text('Back'),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: OutlinedButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: const Text('Back'),
+                          ),
+                        ),
+                        const SizedBox(width: 16),
+                        Expanded(
+                          child: FilledButton(
+                            onPressed: () => Navigator.pushReplacementNamed(context, '/home'),
+                            child: const Text('Go to Home'),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
